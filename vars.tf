@@ -38,3 +38,8 @@ variable "additional_aliases" {
   type        = "list"
   default     = []
 }
+
+variable "cdn_record" {
+  description = "CDN that redirects CDN traffic"
+  type        = "string"
+}
