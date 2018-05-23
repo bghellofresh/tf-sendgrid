@@ -1,28 +1,37 @@
 resource "aws_route53_record" "click_news_sg_cname" {
   zone_id = "${var.zone_id}"
   name    = "click.news.${var.domain}"
-  type    = "CNAME"
-  ttl     = 30
+  type    = "A"
 
-  records = ["sendgrid.net"]
+  alias {
+    name                   = "${aws_cloudfront_distribution.cdn_sendgrid.domain_name}"
+    zone_id                = "Z2FDTNDATAQYW2"
+    evaluate_target_health = true
+  }
 }
 
 resource "aws_route53_record" "click_info_sg_cname" {
   zone_id = "${var.zone_id}"
   name    = "click.info.${var.domain}"
-  type    = "CNAME"
-  ttl     = 30
+  type    = "A"
 
-  records = ["sendgrid.net"]
+  alias {
+    name                   = "${aws_cloudfront_distribution.cdn_sendgrid.domain_name}"
+    zone_id                = "Z2FDTNDATAQYW2"
+    evaluate_target_health = true
+  }
 }
 
 resource "aws_route53_record" "click_alert_sg_cname" {
   zone_id = "${var.zone_id}"
   name    = "click.alerts.${var.domain}"
-  type    = "CNAME"
-  ttl     = 30
+  type    = "A"
 
-  records = ["sendgrid.net"]
+  alias {
+    name                   = "${aws_cloudfront_distribution.cdn_sendgrid.domain_name}"
+    zone_id                = "Z2FDTNDATAQYW2"
+    evaluate_target_health = true
+  }
 }
 
 resource "aws_route53_record" "click_news_sg_id_cname" {
