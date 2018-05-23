@@ -4,8 +4,7 @@ resource "aws_route53_record" "email_news_cname" {
   name    = "email.news.${var.domain}"
   type    = "CNAME"
   ttl     = 30
-
-  records = ["${var.sendgrid_domainkey}"]
+  records = ["${ aws_cloudfront_distribution.cdn_sendgrid.domain_name }"]
 }
 
 resource "aws_route53_record" "email_news_dk1_cname" {
@@ -33,7 +32,7 @@ resource "aws_route53_record" "email_alerts_cname" {
   type    = "CNAME"
   ttl     = 30
 
-  records = ["${var.sendgrid_domainkey}"]
+  records = ["${ aws_cloudfront_distribution.cdn_sendgrid.domain_name }"]
 }
 
 resource "aws_route53_record" "email_alerts_dk1_cname" {
@@ -61,7 +60,7 @@ resource "aws_route53_record" "email_info_cname" {
   type    = "CNAME"
   ttl     = 30
 
-  records = ["${var.sendgrid_domainkey}"]
+  records = ["${ aws_cloudfront_distribution.cdn_sendgrid.domain_name }"]
 }
 
 resource "aws_route53_record" "email_info_dk1_cname" {
