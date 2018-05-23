@@ -18,11 +18,6 @@ variable "sendgrid_id" {
   type        = "string"
 }
 
-variable "validation_mode" {
-  description = "Toggle for CDN vs simple CNAME records for validating new domains"
-  type        = "string"
-}
-
 variable "acm_certificate_arn" {
   description = "The ACM ARN value of the SSL Certificate to use for this domain"
   type        = "string"

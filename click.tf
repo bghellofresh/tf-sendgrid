@@ -4,7 +4,7 @@ resource "aws_route53_record" "click_news_sg_cname" {
   type    = "CNAME"
   ttl     = 30
 
-  records = ["${ var.validation_mode == true ? "sendgrid.net" : aws_cloudfront_distribution.cdn_sendgrid.domain_name }"]
+  records = ["${aws_cloudfront_distribution.cdn_sendgrid.domain_name}"]
 }
 
 resource "aws_route53_record" "click_info_sg_cname" {
@@ -13,7 +13,7 @@ resource "aws_route53_record" "click_info_sg_cname" {
   type    = "CNAME"
   ttl     = 30
 
-  records = ["${ var.validation_mode == true ? "sendgrid.net" : aws_cloudfront_distribution.cdn_sendgrid.domain_name }"]
+  records = ["${aws_cloudfront_distribution.cdn_sendgrid.domain_name}"]
 }
 
 resource "aws_route53_record" "click_alert_sg_cname" {
@@ -22,7 +22,7 @@ resource "aws_route53_record" "click_alert_sg_cname" {
   type    = "CNAME"
   ttl     = 30
 
-  records = ["${ var.validation_mode == true ? "sendgrid.net" : aws_cloudfront_distribution.cdn_sendgrid.domain_name }"]
+  records = ["${aws_cloudfront_distribution.cdn_sendgrid.domain_name}"]
 }
 
 resource "aws_route53_record" "click_news_sg_id_cname" {
@@ -30,8 +30,7 @@ resource "aws_route53_record" "click_news_sg_id_cname" {
   name    = "${var.sendgrid_id}.news.${var.domain}"
   type    = "CNAME"
   ttl     = 30
-
-  records = ["${ var.validation_mode == true ? "sendgrid.net" : aws_cloudfront_distribution.cdn_sendgrid.domain_name }"]
+  records = ["${aws_cloudfront_distribution.cdn_sendgrid.domain_name}"]
 }
 
 resource "aws_route53_record" "click_info_sg_id_cname" {
@@ -40,7 +39,7 @@ resource "aws_route53_record" "click_info_sg_id_cname" {
   type    = "CNAME"
   ttl     = 30
 
-  records = ["${ var.validation_mode == true ? "sendgrid.net" : aws_cloudfront_distribution.cdn_sendgrid.domain_name }"]
+  records = ["${aws_cloudfront_distribution.cdn_sendgrid.domain_name}"]
 }
 
 resource "aws_route53_record" "click_alerts_sg_id_cname" {
@@ -49,5 +48,5 @@ resource "aws_route53_record" "click_alerts_sg_id_cname" {
   type    = "CNAME"
   ttl     = 30
 
-  records = ["${ var.validation_mode == true ? "sendgrid.net" : aws_cloudfront_distribution.cdn_sendgrid.domain_name }"]
+  records = ["${aws_cloudfront_distribution.cdn_sendgrid.domain_name}"]
 }
