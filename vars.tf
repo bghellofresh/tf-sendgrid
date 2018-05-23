@@ -20,7 +20,7 @@ variable "sendgrid_id" {
 
 variable "validation_mode" {
   description = "Toggle for CDN vs simple CNAME records for validating new domains"
-  type        = "boolean"
+  type        = "string"
 }
 
 variable "acm_certificate_arn" {
