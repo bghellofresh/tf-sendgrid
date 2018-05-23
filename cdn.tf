@@ -1,6 +1,6 @@
 resource "aws_cloudfront_distribution" "cdn_sendgrid" {
   comment = "sendgrid ${var.environment} ${var.domain}"
-  aliases = ["${var.additional_aliases}", "click-${var.environment}.${var.domain}"]
+  aliases = ["click.news.${var.domain}", "click.alerts.${var.domain}", "click.info.${var.domain}", "click-${var.environment}.${var.domain}"]
 
   origin {
     domain_name = "sendgrid.net"
@@ -98,12 +98,4 @@ resource "aws_cloudfront_distribution" "cdn_sendgrid" {
       restriction_type = "none"
     }
   }
-}
-
-output "sendgrid_cloudfront_distribution_id" {
-  value = "${aws_cloudfront_distribution.cdn_sendgrid.id}"
-}
-
-output "sendgrid_cloudfront_distribution_domain_name" {
-  value = "${aws_cloudfront_distribution.cdn_sendgrid.domain_name}"
 }

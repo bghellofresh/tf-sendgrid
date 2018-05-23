@@ -32,14 +32,3 @@ variable "environment" {
   description = "The environment to create the values for"
   type        = "string"
 }
-
-variable "additional_aliases" {
-  description = "Sendgrid domain names added as aliases to the CDN"
-  type        = "list"
-  default     = []
-}
-
-variable "cdn_record" {
-  description = "CDN that redirects CDN traffic"
-  type        = "string"
-}
