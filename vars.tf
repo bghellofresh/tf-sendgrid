@@ -17,3 +17,8 @@ variable "sendgrid_id" {
   description = "The ID for the domain in sendgrid"
   type        = "string"
 }
+
+variable "validation_mode" {
+  description = "Toggle for CDN vs simple CNAME records for validating new domains"
+  type        = "boolean"
+}

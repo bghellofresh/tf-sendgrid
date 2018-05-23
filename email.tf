@@ -5,7 +5,7 @@ resource "aws_route53_record" "email_news_cname" {
   type    = "CNAME"
   ttl     = 30
 
-  records = ["${var.sendgrid_domainkey}"]
+  records = ["${ var.validation_mode == true ? var.sendgrid_domainkey : var.cdn_record }"]
 }
 
 resource "aws_route53_record" "email_news_dk1_cname" {
@@ -33,7 +33,7 @@ resource "aws_route53_record" "email_alerts_cname" {
   type    = "CNAME"
   ttl     = 30
 
-  records = ["${var.sendgrid_domainkey}"]
+  records = ["${ var.validation_mode == true ? var.sendgrid_domainkey : var.cdn_record }"]
 }
 
 resource "aws_route53_record" "email_alerts_dk1_cname" {
@@ -61,7 +61,7 @@ resource "aws_route53_record" "email_info_cname" {
   type    = "CNAME"
   ttl     = 30
 
-  records = ["${var.sendgrid_domainkey}"]
+  records = ["${ var.validation_mode == true ? var.sendgrid_domainkey : var.cdn_record }"]
 }
 
 resource "aws_route53_record" "email_info_dk1_cname" {
