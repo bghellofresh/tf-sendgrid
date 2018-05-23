@@ -22,3 +22,19 @@ variable "validation_mode" {
   description = "Toggle for CDN vs simple CNAME records for validating new domains"
   type        = "boolean"
 }
+
+variable "acm_certificate_arn" {
+  description = "The ACM ARN value of the SSL Certificate to use for this domain"
+  type        = "string"
+}
+
+variable "environment" {
+  description = "The environment to create the values for"
+  type        = "string"
+}
+
+variable "additional_aliases" {
+  description = "Sendgrid domain names added as aliases to the CDN"
+  type        = "list"
+  default     = []
+}
