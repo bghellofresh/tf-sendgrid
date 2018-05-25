@@ -17,3 +17,13 @@ variable "sendgrid_id" {
   description = "The ID for the domain in sendgrid"
   type        = "string"
 }
+
+variable "acm_certificate_arn" {
+  description = "The ACM ARN value of the SSL Certificate to use for this domain"
+  type        = "string"
+}
+
+variable "environment" {
+  description = "The environment to create the values for"
+  type        = "string"
+}
